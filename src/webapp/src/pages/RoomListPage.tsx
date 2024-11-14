@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { message } from 'antd';
 import { RoomList } from '../components/RoomList';
+import { LiveRoomConfig } from '../../types/notification';
 
 export const RoomListPage: React.FC = () => {
-  // ... 其他状态和方法保持不变 ...
+  const [rooms, setRooms] = useState<LiveRoomConfig[]>([]);
+
+  // 获取房间列表
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const response = await fetch('/api/rooms');
+        const data = await response.json();
+        setRooms(data);
+      } catch (error) {
+        message.error('获取房间列表失败');
+        console.error(error);
+      }
+    };
+
+    fetchRooms();
+  }, []);
 
   const handleNotifyChange = async (url: string, enabled: boolean) => {
     try {
@@ -48,4 +65,4 @@ export const RoomListPage: React.FC = () => {
       />
     </div>
   );
-}; 
+};
