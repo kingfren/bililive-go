@@ -1,14 +1,9 @@
 import React from 'react';
 import { Switch } from 'antd';
+import { LiveRoomConfig } from '../types/notification';
 
 interface RoomListProps {
-  rooms: Array<{
-    url: string;
-    is_listening: boolean;
-    notify?: {
-      enable_notify: boolean;
-    };
-  }>;
+  rooms: LiveRoomConfig[];
   onNotifyChange: (url: string, enabled: boolean) => void;
 }
 
@@ -33,7 +28,7 @@ export const RoomList: React.FC<RoomListProps> = ({ rooms, onNotifyChange }) => 
               <td>
                 <Switch
                   checked={room.notify?.enable_notify}
-                  onChange={(checked) => onNotifyChange(room.url, checked)}
+                  onChange={(checked: boolean) => onNotifyChange(room.url, checked)}
                 />
               </td>
               <td>{/* ... 操作按钮 ... */}</td>

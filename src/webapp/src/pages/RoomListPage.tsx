@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { message } from 'antd';
 import { RoomList } from '../components/RoomList';
-import { LiveRoomConfig } from '../../types/notification';
+import { LiveRoomConfig } from '../types/notification';
 
 export const RoomListPage: React.FC = () => {
   const [rooms, setRooms] = useState<LiveRoomConfig[]>([]);
@@ -65,4 +65,4 @@ export const RoomListPage: React.FC = () => {
       />
     </div>
   );
-};
+}; 
