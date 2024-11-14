@@ -3,6 +3,8 @@ on:
   push:
     tags:
       - 'v*'
+    branches:
+      - dev
 jobs:
   release-bins:
     runs-on: ubuntu-latest
