@@ -1,0 +1,15 @@
+.file-list {
+  padding: 24px;
+}
+
+.file-list .ant-breadcrumb {
+  margin-bottom: 16px;
+}
+
+.file-list .anticon {
+  margin-right: 8px;
+}
+
+.file-list .ant-table-cell a {
+  margin-right: 16px;
+} 
