@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch } from 'antd';
-import { LiveRoomConfig } from '../types/notification';
+import type { LiveRoomConfig } from '../types/notification';
 
 interface RoomListProps {
   rooms: LiveRoomConfig[];
