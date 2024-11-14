@@ -1,0 +1,30 @@
+.room-list {
+  padding: 20px;
+}
+
+.room-list-header {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.room-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.room-table th,
+.room-table td {
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+  text-align: left;
+}
+
+.room-table th {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+.room-table td button {
+  margin-right: 8px;
+} 
