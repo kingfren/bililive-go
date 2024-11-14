@@ -18,9 +18,13 @@ live_rooms:
 # HEVC相比AVC体积更小, 减少35%体积, 画质相当, 但是B站转码有时候会崩
 - url: https://www.lang.live/room/5664344
   is_listening: false
+  notify:
+    enable_notify: false
 - url: https://live.bilibili.com/22603245
   is_listening: true
-  quality: 0 
+  quality: 0
+  notify:
+    enable_notify: true
 out_put_tmpl: ""
 video_split_strategies:
   on_room_name_changed: false
