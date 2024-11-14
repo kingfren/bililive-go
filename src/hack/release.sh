@@ -30,14 +30,10 @@ package() {
   echo $BIN_PATH/$res
 }
 
-for dist in $(go tool dist list); do
-  case $dist in
-  linux/loong64 | android/* | ios/* | js/wasm )
-    continue
-    ;;
-  *) ;;
+# 只编译指定的平台
+PLATFORMS="linux/386 linux/amd64 windows/amd64"
 
-  esac
+for dist in $PLATFORMS; do
   platform=$(echo ${dist} | cut -d'/' -f1)
   arch=$(echo ${dist} | cut -d'/' -f2)
   make PLATFORM=${platform} ARCH=${arch} bililive
